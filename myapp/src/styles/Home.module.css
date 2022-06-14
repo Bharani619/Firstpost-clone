@@ -1,0 +1,14 @@
+.RamboContainer{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    gap:5%;
+}
+.ArticlesContainer{
+    width:60%;
+}
+.RandompostsContainer{
+    width:20%;
+    margin-top:0.5%;
+}
