@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Banner } from './Banner';
 export const Footer = () => {
   return (
-    <div>
+    <div className={styles.FooterMainContainer}>
       {/* <div className={styles.Banner}>
       <Banner/>
       </div> */}

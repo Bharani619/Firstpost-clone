@@ -1,6 +1,11 @@
+.FooterMainContainer{
+    margin-top: 2%;
+    border-top:4px solid grey;
+}
 .footerContainer{
     width:80%;
     margin: auto;
+    margin-top:2%;
     cursor: pointer;
 }
 

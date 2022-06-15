@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import styles from '../styles/sideBar.module.css'
 import { ChakraProvider, useDisclosure } from '@chakra-ui/react';
 import {
     Drawer,
@@ -10,6 +11,7 @@ import {
     DrawerCloseButton,
     Button,
   } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
   export const SideBar=()=>{
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -30,18 +32,52 @@ import {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
-  
-            <DrawerBody>
-              <input type="text" />
+            <DrawerHeader></DrawerHeader>
+            <DrawerBody style={{padding:'0',marginTop:"5%"}}>
+               <div className={styles.mainContainer}>
+                <div className={styles.containerOne}>
+                     <div>
+                      <span><i class="fas fa-indent"></i></span>
+                      <p>Sections</p>
+                     </div>
+                     <div>
+                     <span><i class="far fa-copy"></i></span>
+                      <p>More</p>
+                     </div>
+                     <div>
+                     <span><i class="fas fa-tv"></i></span>
+                      <p>Shows</p>
+                     </div>
+                     <div>
+                     <span><i class="fab fa-cc-discover"></i></span>
+                      <p>F.Brands</p>
+                     </div>
+                </div>
+                <div className={styles.containerTwo}>
+                  <div><Link to="/">Home</Link></div>
+                  <div><Link to="/">Health</Link></div>
+                  <div><Link to="/">India</Link></div>
+                  <div><Link to="/">World</Link></div>
+                  <div><Link to="/">Politics</Link></div>
+                  <div><Link to="/">Arts & Culture</Link></div>
+                  <div><Link to="/">Auto</Link></div>
+                  <div><Link to="/">Opinion</Link></div>
+                  <div><Link to="/">Sports</Link></div>
+                  <div><Link to="/">Cricket</Link></div>
+                  <div><Link to="/">Entertainment</Link></div>
+                  <div><Link to="/">Tech</Link></div>
+                  <div><Link to="/">Photos</Link></div>
+                  <div><Link to="/">Videos</Link></div>
+                  <div><Link to="/">Buisness</Link></div>
+                </div>
+               </div>
+               <div className={styles.ContainerThree}>
+                <div><i class="fab fa-facebook"></i></div>
+                <div><i class="fab fa-twitter"></i></div>
+                <div><i class="fab fa-instagram"></i></div>
+                <div><i class="fab fa-youtube"></i></div>
+               </div>
             </DrawerBody>
-  
-            <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='blue'>Save</Button>
-            </DrawerFooter>
           </DrawerContent>
         </Drawer>
         </ChakraProvider>
