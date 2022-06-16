@@ -55,20 +55,20 @@ import { Link } from 'react-router-dom';
                 </div>
                 <div className={styles.containerTwo}>
                   <div><Link to="/">Home</Link></div>
-                  <div><Link to="/">Health</Link></div>
-                  <div><Link to="/">India</Link></div>
-                  <div><Link to="/">World</Link></div>
-                  <div><Link to="/">Politics</Link></div>
-                  <div><Link to="/">Arts & Culture</Link></div>
-                  <div><Link to="/">Auto</Link></div>
-                  <div><Link to="/">Opinion</Link></div>
-                  <div><Link to="/">Sports</Link></div>
-                  <div><Link to="/">Cricket</Link></div>
-                  <div><Link to="/">Entertainment</Link></div>
-                  <div><Link to="/">Tech</Link></div>
-                  <div><Link to="/">Photos</Link></div>
-                  <div><Link to="/">Videos</Link></div>
-                  <div><Link to="/">Buisness</Link></div>
+                  <div><Link to="/Health">Health</Link></div>
+                  <div><Link to="/India">India</Link></div>
+                  <div><Link to="/World">World</Link></div>
+                  <div><Link to="/Politics">Politics</Link></div>
+                  <div><Link to="/arts">Arts & Culture</Link></div>
+                  <div><Link to="/auto">Auto</Link></div>
+                  <div><Link to="/opinion">Opinion</Link></div>
+                  <div><Link to="/Sports">Sports</Link></div>
+                  <div><Link to="/Cricket">Cricket</Link></div>
+                  <div><Link to="/Entertainment">Entertainment</Link></div>
+                  <div><Link to="/Tech">Tech</Link></div>
+                  <div><Link to="/Photos">Photos</Link></div>
+                  <div><Link to="/Videos">Videos</Link></div>
+                  <div><Link to="/Buisness">Buisness</Link></div>
                 </div>
                </div>
                <div className={styles.ContainerThree}>

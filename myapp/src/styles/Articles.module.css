@@ -8,12 +8,11 @@
    padding: 5px;
    gap:1px;
 }
-/* .RolexBlockTwo{
-    border: 1px solid red;
-} */
+.RolexBlockTwo{
+    margin-top: 10%;
+}
 .contentBlock{
     text-align: left;
-    background: grey;
     width:98%;
     margin-left:2%;
     margin-top: -10%;

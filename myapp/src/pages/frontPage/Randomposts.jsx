@@ -1,13 +1,15 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Banner } from '../../components/Banner'
 import { fetchMostReadData } from '../../Reducer/action'
 import styles from "../../styles/RandomPosts.module.css"
 
 export const Randomposts = () => {
   const data = useSelector((store)=>store.NewsData.MostReadData)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(()=>{
     if(data?.length===0){
@@ -15,7 +17,11 @@ export const Randomposts = () => {
     }
   },[dispatch])
 
-  console.log("most:",data)
+  const handleClick = (item)=>{
+    localStorage.setItem("News",JSON.stringify(item));
+    navigate("/NewsDesp")
+}
+
   return (
     <div>
       <div className={styles.RandompostBlockOne}>
@@ -42,7 +48,7 @@ export const Randomposts = () => {
            <div>
               {data.articles?.map((item,i)=> {
                 return(
-                  <div className={styles.MostReadposts} key={i+1}>
+                  <div className={styles.MostReadposts} onClick={()=>handleClick(item)} key={i+1}>
                      <div>
                       <label>{i+1}</label>
                       <div className={styles.indexs}></div>
