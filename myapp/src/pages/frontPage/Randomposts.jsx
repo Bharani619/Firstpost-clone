@@ -15,15 +15,17 @@ export const Randomposts = () => {
     if(data?.length===0){
       dispatch(fetchMostReadData())
     }
-  },[dispatch])
+  },[dispatch,data?.length])
 
   const handleClick = (item)=>{
     localStorage.setItem("News",JSON.stringify(item));
     navigate("/NewsDesp")
 }
 
+console.log("mostRead:",data)
+
   return (
-    <div>
+    <div >
       <div className={styles.RandompostBlockOne}>
       <img src="https://tpc.googlesyndication.com/simgad/11504148726813191639" alt="" />
       </div>
@@ -46,7 +48,7 @@ export const Randomposts = () => {
       <div className={styles.RandompostBlockFourone}><label>Most Read</label></div>
       <div className={styles.RandompostBlockFour}>
            <div>
-              {data.articles?.map((item,i)=> {
+              {data.results?.map((item,i)=> {
                 return(
                   <div className={styles.MostReadposts} onClick={()=>handleClick(item)} key={i+1}>
                      <div>

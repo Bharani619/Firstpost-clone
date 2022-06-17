@@ -46,14 +46,14 @@ export const Cricket = () => {
                 <Slider/>
             </div>
             <div className={styles.RolexBlockTwo}>
-                {data.articles?.map((item,i)=> {
+                {data.results?.map((item,i)=> {
                   return (
                     <div onClick={()=>handleClick(item)}  key={i}>
                       <div>
-                        <img width="100%" src={item.urlToImage} alt="" />
+                        <img width="100%" src={item.image_url} alt="" />
                       </div>
                       <div className={styles.contentBlock}>
-                        <div><label>{item.author}</label></div>
+                        <div><label>{item.category}</label></div>
                         <div><h2>{item.title}</h2></div>
                         <div><p>{item.description}</p></div>
                       </div>

@@ -13,6 +13,7 @@ const initialState = {
     Cricket:[],
     Politics:[],
     Random:[],
+    SearchData:[],
     error:"",
     loading:false
 }
@@ -249,7 +250,25 @@ export const reducer = (state=initialState, action)=>{
                     error:payload,
                      loading:false
             }                                  
-                                              
+        case types.FETCH_SEARCH_DATA_REQUEST:
+            return{
+                     ...state,
+                     error:"",
+                    loading:false
+            }        
+        case types.FETCH_SEARCH_DATA_SUCCESS:
+            return{
+                    ...state,
+                    SearchData:payload,
+                    error:"",
+                    loading:false
+            }  
+        case types.FETCH_SEARCH_DATA_ERROR:
+           return{
+                    ...state,
+                    error:payload,
+                     loading:false
+            }                                           
         default:
             return state;     
     }

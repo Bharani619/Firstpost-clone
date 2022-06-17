@@ -11,6 +11,13 @@
 .RolexBlockTwo{
     margin-top: 10%;
 }
+/* .RolexCardBlock{
+    margin:5%;
+} */
+.RolexCardBlock{
+    margin-bottom:20%;
+}
+
 .contentBlock{
     text-align: left;
     width:98%;

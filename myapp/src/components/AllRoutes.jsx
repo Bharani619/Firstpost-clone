@@ -7,6 +7,7 @@ import { Health } from '../pages/Health'
 import { India } from '../pages/India'
 import { NewsDesp } from '../pages/NewsDesp'
 import { Politics } from '../pages/Politics'
+import { SearchPage } from '../pages/SearchPage'
 import { Sports } from '../pages/Sports'
 import { Tech } from '../pages/Tech'
 import { World } from '../pages/World'
@@ -26,6 +27,7 @@ export const AllRoutes = () => {
       <Route path="/Politics" element={<Politics/>}/>
       <Route path="/World" element={<World/>}/>
       <Route path="/NewsDesp" element={<NewsDesp/>}/>
+      <Route path="/SearchPage" element={<SearchPage/>}/>
     </Routes>
     </>
   )

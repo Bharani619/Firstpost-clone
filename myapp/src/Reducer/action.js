@@ -76,7 +76,7 @@ export const fetchMostReadError = (payload)=>{
 export const fetchArchiveData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchArchiveDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&language=en")
         .then((r)=>dispatch(fetchArchiveDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchArchiveDataError(e.data)))
     }
@@ -86,9 +86,7 @@ export const fetchArchiveData = (payload)=>{
 export const fetchMostReadData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchMostReadRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=94cc36c03a094c21accaffab9e6fead8",{
-            params:{perPage:5}
-        })
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=business,food,science,politics&language=en")
         .then((r)=>dispatch(fetchMostReadSuccess(r.data)))
         .catch((e)=>dispatch(fetchMostReadError(e.data)))
     }
@@ -118,7 +116,7 @@ export const fetchHealthDataError = (payload)=>{
 export const fetchHealthData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchHealthDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?category=health&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=health&language=en")
         .then((r)=>dispatch(fetchHealthDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchHealthDataError(e.data)))
     }
@@ -148,12 +146,7 @@ export const fetchEntDataError = (payload)=>{
 export const fetchEntData = (payload,page)=>{
     return(dispatch)=>{
         dispatch(fetchEntDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?category=entertainment&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8",{
-            params:{
-                _page:page,
-                _limit:5
-            }
-        })
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=entertainment&language=en")
         .then((r)=>dispatch(fetchEntDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchEntDataError(e.data)))
     }
@@ -183,9 +176,7 @@ export const fetchSportsDataError = (payload)=>{
 export const fetchSportsData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchSportsDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?category=sports&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8",{
-            params:{perPage:5}
-        })
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=sports&language=en")
         .then((r)=>dispatch(fetchSportsDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchSportsDataError(e.data)))
     }
@@ -215,7 +206,7 @@ export const fetchWorldDataError = (payload)=>{
 export const fetchWorldData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchWorldDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?category=general&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=world&language=en")
         .then((r)=>dispatch(fetchWorldDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchWorldDataError(e.data)))
     }
@@ -245,7 +236,7 @@ export const fetchIndiaDataError = (payload)=>{
 export const fetchIndiaData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchIndiaDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&country=in&language=en")
         .then((r)=>dispatch(fetchIndiaDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchIndiaDataError(e.data)))
     }
@@ -275,7 +266,7 @@ export const fetchTechDataError = (payload)=>{
 export const fetchTechData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchTechDataRequest())
-        axios.get("https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&category=technology&language=en")
         .then((r)=>dispatch(fetchTechDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchTechDataError(e.data)))
     }
@@ -305,7 +296,7 @@ export const fetchCricketDataError = (payload)=>{
 export const fetchCricketData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchCricketDataRequest())
-        axios.get("https://newsapi.org/v2/everything?q=cricket&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&q=cricket&language=en")
         .then((r)=>dispatch(fetchCricketDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchCricketDataError(e.data)))
     }
@@ -335,7 +326,7 @@ export const fetchPoliticsDataError = (payload)=>{
 export const fetchPoliticsData = (payload)=>{
     return(dispatch)=>{
         dispatch(fetchPoliticsDataRequest())
-        axios.get("https://newsapi.org/v2/everything?q=politics&apiKey=94cc36c03a094c21accaffab9e6fead8")
+        axios.get("https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&q=politics&language=en")
         .then((r)=>dispatch(fetchPoliticsDataSuccess(r.data)))
         .catch((e)=>dispatch(fetchPoliticsDataError(e.data)))
     }
@@ -371,6 +362,35 @@ export const fetchRandomData = (payload)=>{
     }
 }
 
+export const fetchSearchDataRequest = (payload)=>{
+    return{
+        type:types.FETCH_SEARCH_DATA_REQUEST,
+        payload
+    }
+}
+
+export const fetchSearchDataSuccess = (payload)=>{
+    return{
+        type:types.FETCH_SEARCH_DATA_SUCCESS,
+        payload
+    }
+}
+
+export const fetchSearchDataError = (payload)=>{
+    return{
+        type:types.FETCH_SEARCH_DATA_ERROR,
+        payload
+    }
+}
+
+export const fetchSearchData = (payload)=>{
+    return(dispatch)=>{
+        dispatch(fetchSearchDataRequest())
+        axios.get(`https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2&q=${payload}&language=en`)
+        .then((r)=>dispatch(fetchSearchDataSuccess(r.data)))
+        .catch((e)=>dispatch(fetchSearchDataError(e.data)))
+    }
+}
 
 
 // https://newsdata.io/api/1/news?apikey=pub_838770b4e7004abcd680cb2ed4ee5e68d5b2

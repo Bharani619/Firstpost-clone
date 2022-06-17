@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../styles/Footer.module.css"
 import { Link } from "react-router-dom";
-import { Banner } from './Banner';
+
 export const Footer = () => {
   return (
     <div className={styles.FooterMainContainer}>
@@ -12,8 +12,10 @@ export const Footer = () => {
         <div className={styles.footerLayerOne}>
                <div><img src="https://www.firstpost.com/static/images/fp-logo.png" alt="" /></div>
                <div className={styles.footerIcons}>
-                  <div>HEllo</div>
-                  <div>Welcome</div>
+                  <div><span><i class="fab fa-facebook"></i></span></div>
+                  <div><span><i class="fab fa-twitter"></i></span></div>
+                  <div><span><i class="fab fa-instagram"></i></span></div>
+                  <div><span><i class="fab fa-youtube"></i></span></div>
                </div> 
         </div>
         <div className={styles.footerLayerTwo}>
@@ -32,15 +34,15 @@ export const Footer = () => {
             <ul>
                 <label>Section</label>
                 <li><Link to="/">Front Page</Link></li>
-                <li><Link to="/">Politics</Link></li>
-                <li><Link to="/">Sports</Link></li>
-                <li><Link to="/">India</Link></li>
-                <li><Link to="/">World</Link></li>
+                <li><Link to="/Politics">Politics</Link></li>
+                <li><Link to="/Sports">Sports</Link></li>
+                <li><Link to="/India">India</Link></li>
+                <li><Link to="/World">World</Link></li>
                 <li><Link to="/">Buisness</Link></li>
-                <li><Link to="/">Entertainment News</Link></li>
-                <li><Link to="/">Cricket</Link></li>
-                <li><Link to="/">Tech</Link></li>
-                <li><Link to="/">Health</Link></li>
+                <li><Link to="/Entertainment">Entertainment News</Link></li>
+                <li><Link to="/Cricket">Cricket</Link></li>
+                <li><Link to="/Tech">Tech</Link></li>
+                <li><Link to="/Health">Health</Link></li>
                 <li><Link to="/">photos</Link></li>
                 <li><Link to="/">Videos</Link></li>
                 <li><Link to="/">Press Release</Link></li>

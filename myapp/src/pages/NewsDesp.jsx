@@ -6,18 +6,23 @@ import { RandomNews as Data } from '../components/Data'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchRandomData } from '../Reducer/action'
+import { useNavigate } from 'react-router-dom'
 export const NewsDesp = () => {
   // pub_838770b4e7004abcd680cb2ed4ee5e68d5b2
   const RandomData = useSelector((store)=>store.NewsData.Random)
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(()=>{
     if(RandomData?.length===0){
       dispatch(fetchRandomData())
     }
   },[dispatch,RandomData?.length])
-
-  console.log("rand:",RandomData)
+  
+  const handleClick = (item)=>{
+    localStorage.setItem("News",JSON.stringify(item));
+    navigate("/NewsDesp")
+}
 
   const data = JSON.parse(localStorage.getItem("News"))
 
@@ -32,16 +37,16 @@ export const NewsDesp = () => {
          </div>
          <div className={styles.RamboContainer}>
          <div className={styles.ArticlesContainer}>
-           <div style={{fontWeight:"bold"}}>{data.name}</div>
+           <div style={{fontWeight:"bold",textDecoration:"underline",textDecorationColor:"goldenrod"}}>{data.category}</div>
            <div><h1 style={{fontWeight:"bold",fontSize:"28px",lineHeight:"35px"}}>{data.title}</h1></div>
            <div><p style={{fontWeight:"300",fontSize:"20px"}}>{data.description}</p></div>
            <div className={styles.RainbowBlockOne}>
-            <div><p>{data.source.name}</p></div>
+            <div><p>{data.source_id}</p></div>
             <div><span>|</span></div>
-            <div>{data.publishedAt}</div>
+            <div>{data.pubDate}</div>
            </div>
            <div className={styles.RainbowBlockOneImage}>
-            <img width="100%" src={data.urlToImage} alt="" />
+            <img width="100%" src={data.image_url} alt="" />
            </div>
             <div className={styles.RainbowBlockOneContent}>
                 <p>{data.content}</p>  
@@ -78,7 +83,7 @@ export const NewsDesp = () => {
             <div className={styles.RolexBlockTwo}>
                 {RandomData.results?.map((item,i)=> {
                   return (
-                    <div  key={i}>
+                    <div onClick={()=>handleClick(item)} key={i}>
                       <div>
                         <img width="100%" src={item.image_url} alt="" />
                       </div>

@@ -18,6 +18,9 @@
     display: flex;
     gap:5px;
 }
+.footerIcons span{
+    font-size: 20px;
+}
 .footerLayerTwo{
     display: flex;
     gap:10%;

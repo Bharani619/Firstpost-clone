@@ -37,8 +37,8 @@ export const Slider = () => {
       {data.results?.map((item,i)=> {
         return (
           <>
-       <SwiperSlide key={i}>
-        {item.image_url && <img width="100%" style={{padding:"5px"}} src={item.image_url} alt="" />}
+       <SwiperSlide className={styles.CardOne} key={i}>
+        <div><img width="100%" height="400px" style={{padding:"5px"}} src={item.image_url} alt="" /></div>
         <div className={styles.swiperCard}>
         <p className={styles.swiperCategory}>{item.category}</p>
         <p style={{textAlign:"left",fontSize:"22px",fontWeight:"bold"}}>{item.title}</p>
