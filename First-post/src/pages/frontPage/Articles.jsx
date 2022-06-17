@@ -20,7 +20,6 @@ export const Articles = () => {
 
   const handleClick = (item)=>{
     localStorage.setItem("News",JSON.stringify(item));
-    alert("clicked")
     navigate("/NewsDesp")
 }
 
